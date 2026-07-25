@@ -1234,5 +1234,199 @@ transform:scale(1);
         #5f9ee8
     );
 }
+/* ==========================
+   ROSA AZUL
+========================== */
 
+
+
+/* ===== ESCENA ===== */
+
+#roseContainer{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:420px;
+    position:relative;
+    overflow:visible;
+}
+
+.roseScene{
+    position:relative;
+    width:260px;
+    height:360px;
+}
+
+/* ===== BRILLO (aún sin color fuerte) ===== */
+
+.roseLight{
+    position:absolute;
+    width:170px;
+    height:170px;
+    left:50%;
+    top:70px;
+    transform:translateX(-50%);
+    border-radius:50%;
+    filter:blur(40px);
+    opacity:.25;
+}
+
+/* ===== FLOR ===== */
+
+.rose{
+    position:absolute;
+    left:50%;
+    top:35px;
+    transform:translateX(-50%);
+    width:170px;
+    height:170px;
+}
+
+/* ===== TALLO ===== */
+
+.stem{
+    position:absolute;
+    width:8px;
+    height:185px;
+    left:50%;
+    top:145px;
+    transform:translateX(-50%);
+    border-radius:10px;
+}
+
+/* ===== HOJAS ===== */
+
+.leaf{
+    position:absolute;
+    width:48px;
+    height:24px;
+    border-radius:50px 0;
+    top:235px;
+}
+
+.leafLeft{
+    left:42px;
+    transform:rotate(-35deg);
+}
+
+.leafRight{
+    right:42px;
+    transform:rotate(145deg);
+}
+
+/* ===== ANILLOS ===== */
+
+.outerRing,
+.middleRing,
+.innerRing{
+    position:absolute;
+    inset:0;
+}
+
+/* ===== PÉTALOS ===== */
+
+.petal{
+    position:absolute;
+    width:68px;
+    height:92px;
+    left:50%;
+    top:50%;
+    margin-left:-34px;
+    margin-top:-46px;
+
+    border-radius:
+        70% 70% 60% 60% /
+        90% 90% 45% 45%;
+
+    transform-origin:center 92%;
+}
+
+/* Exterior */
+
+.p1{transform:rotate(0deg) translateY(-50px);}
+.p2{transform:rotate(60deg) translateY(-50px);}
+.p3{transform:rotate(120deg) translateY(-50px);}
+.p4{transform:rotate(180deg) translateY(-50px);}
+.p5{transform:rotate(240deg) translateY(-50px);}
+.p6{transform:rotate(300deg) translateY(-50px);}
+
+/* Medio */
+
+.p7{transform:rotate(45deg) translateY(-28px) scale(.85);}
+.p8{transform:rotate(135deg) translateY(-28px) scale(.85);}
+.p9{transform:rotate(225deg) translateY(-28px) scale(.85);}
+.p10{transform:rotate(315deg) translateY(-28px) scale(.85);}
+
+/* Interior */
+
+.p11{transform:rotate(25deg) translateY(-10px) scale(.65);}
+.p12{transform:rotate(205deg) translateY(-10px) scale(.65);}
+
+/* Centro */
+
+.centerBud{
+    position:absolute;
+    width:42px;
+    height:42px;
+    left:50%;
+    top:50%;
+    margin-left:-21px;
+    margin-top:-21px;
+    border-radius:50%;
+}
+/* ===== COLORES DE LA ROSA ===== */
+
+.roseLight{
+    background:radial-gradient(circle,
+        rgba(80,170,255,.55) 0%,
+        rgba(40,120,255,.25) 45%,
+        transparent 75%);
+}
+
+.stem{
+    background:linear-gradient(
+        to bottom,
+        #58d26a,
+        #1d7f33
+    );
+}
+
+.leaf{
+    background:linear-gradient(
+        135deg,
+        #67ea7d,
+        #218b3d
+    );
+    box-shadow:0 0 10px rgba(50,180,90,.4);
+}
+
+/* ===== PÉTALOS ===== */
+
+.petal{
+
+    background:
+    radial-gradient(circle at 35% 25%,
+    #9fe7ff 0%,
+    #5cb8ff 25%,
+    #257cff 60%,
+    #103cb6 100%);
+
+    box-shadow:
+    inset 0 0 12px rgba(255,255,255,.35),
+    0 0 10px rgba(40,120,255,.35);
+}
+
+/* ===== CENTRO ===== */
+
+.centerBud{
+
+    background:
+    radial-gradient(circle,
+    #b7f2ff,
+    #56aaff,
+    #1d4cff);
+
+    box-shadow:
+    0 0 18px rgba(80,180,255,.8);
+}
 
