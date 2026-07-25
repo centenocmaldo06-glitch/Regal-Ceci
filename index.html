@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Feliz Cumpleaños, Ceci 💙</title>
+
+    <meta name="theme-color" content="#07162e">
+
+    <meta name="description"
+          content="Un regalo hecho con mucho cariño.">
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <link rel="stylesheet"
+          href="css/stars.css">
+
+    <link rel="stylesheet"
+          href="css/animations.css">
+
+</head>
+
+<body>
+
+<!--==========================
+        FONDO
+===========================-->
+
+<div id="sky"></div>
+
+<div id="stars"></div>
+
+<div id="particles"></div>
+
+<div id="moon"></div>
+
+<!--==========================
+        MÚSICA
+===========================-->
+
+<button id="musicButton"
+        title="Música">
+
+    🎵
+
+</button>
+
+<audio
+id="music"
+loop>
+
+<source
+src="music/musica.mp3"
+type="audio/mpeg">
+
+</audio>
+
+<!--==========================
+      INTRODUCCIÓN
+===========================-->
+
+<section
+id="intro"
+class="screen active">
+
+<div class="glass">
+
+<h1 class="title">
+
+Feliz Cumpleaños
+
+</h1>
+
+<h2 class="name">
+
+Ceci 💙
+
+</h2>
+
+<p class="introText">
+
+Hay regalos que se compran.
+
+<br><br>
+
+Y otros...
+
+que se construyen con tiempo,
+paciencia y mucho cariño.
+
+</p>
+
+<button
+id="startButton">
+
+Comenzar ✨
+
+</button>
+
+</div>
+
+</section>
+
+<!--==========================
+     CUENTA REGRESIVA
+===========================-->
+
+<section
+id="countdown"
+class="screen hidden">
+
+<div class="glass">
+
+<h2>
+
+Preparando tu sorpresa...
+
+</h2>
+
+<div id="counter">
+
+3
+
+</div>
+
+</div>
+
+</section>
+
+<!--==========================
+          SOBRE
+===========================-->
+
+<section
+id="envelopeScreen"
+class="screen hidden">
+
+<div class="glass">
+
+<h2>
+
+Toca el sobre
+
+</h2>
+
+<div
+class="envelope"
+id="envelope">
+
+<div class="lid"></div>
+
+<div class="paperShadow"></div>
+
+<div class="body"></div>
+  <div class="leftFold"></div>
+  <div class="rightFold"></div>
+
+<div class="seal">
+
+💙
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!--==========================
+          CARTA
+===========================-->
+
+<section
+id="letterScreen"
+class="screen hidden">
+
+<div class="glass paper">
+
+<div class="letterHeader">
+
+<h2>Para ti 💙</h2>
+
+<span id="letterDate"></span>
+
+</div>
+
+<div id="letterText">
+
+</div>
+
+<button
+id="continueButton"
+class="hidden">
+
+Continuar ✨
+
+</button>
+
+</div>
+
+</section>
+
+<!--==========================
+         DESEOS
+===========================-->
+
+<section
+id="wishesScreen"
+class="screen hidden">
+
+<div class="glass">
+
+<h2>
+
+Un pequeño deseo para ti ✨
+
+</h2>
+
+<div id="wishContainer">
+
+</div>
+
+<div class="wishControls">
+
+<button id="nextWish">
+
+Siguiente deseo →
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==========================
+        ROSA AZUL
+===========================-->
+
+<section
+id="roseScreen"
+class="screen hidden">
+
+<div class="glass">
+
+<h2>
+
+Una pequeña sorpresa...
+
+</h2>
+
+<div id="roseContainer">
+
+<svg
+    id="blueRose"
+    viewBox="0 0 500 700">
+
+<defs>
+
+<linearGradient id="stemGradient"
+x1="0%"
+y1="0%"
+x2="0%"
+y2="100%">
+
+<stop offset="0%" stop-color="#54ff9f"/>
+<stop offset="100%" stop-color="#13763d"/>
+
+</linearGradient>
+
+<linearGradient id="leafGradient"
+x1="0%"
+y1="0%"
+x2="100%"
+y2="100%">
+
+<stop offset="0%" stop-color="#8cffb8"/>
+<stop offset="100%" stop-color="#1b9f4e"/>
+
+</linearGradient>
+
+<radialGradient id="roseCenter"
+cx="50%"
+cy="50%"
+r="70%">
+
+<stop offset="0%" stop-color="#b7e7ff"/>
+
+<stop offset="100%" stop-color="#3f7cff"/>
+
+</radialGradient>
+
+</defs>
+
+<!-- Tallo -->
+
+<path
+id="stem"
+
+d="M250 650
+C240 540
+245 430
+250 310
+C255 210
+250 150
+250 90"
+
+stroke="url(#stemGradient)"
+
+stroke-width="12"
+
+fill="none"
+
+stroke-linecap="round"/>
+
+<!-- Hoja izquierda -->
+
+<path
+
+id="leafLeft"
+
+d="
+
+M245 380
+
+C175 330
+
+145 285
+
+170 240
+
+C220 255
+
+245 315
+
+245 380
+
+"
+
+fill="url(#leafGradient)"/>
+
+<!-- Hoja derecha -->
+
+<path
+
+id="leafRight"
+
+d="
+
+M255 290
+
+C330 255
+
+365 210
+
+340 165
+
+C295 185
+
+260 235
+
+255 290
+
+"
+
+fill="url(#leafGradient)"/>
+
+<!-- Centro -->
+
+<circle
+
+id="center"
+
+cx="250"
+
+cy="100"
+
+r="28"
+
+fill="url(#roseCenter)"/>
+
+<!-- Aquí irán los pétalos -->
+
+<g id="roseLayers"></g>
+
+</svg>
+
+</div>
+
+<p id="roseMessage">
+
+A veces los mejores regalos
+no caben en una caja.
+
+Se hacen con tiempo,
+dedicación y mucho cariño.
+
+</p>
+
+<button
+id="roseButton">
+
+Continuar 💙
+
+</button>
+
+</div>
+
+</section>
+
+<!--==========================
+       INVITACIÓN
+===========================-->
+
+<section
+id="ticketScreen"
+class="screen hidden">
+
+<div class="ticket">
+
+<div class="ticketTop">
+
+<h2>
+
+🎡 Entrada Especial
+
+</h2>
+
+</div>
+
+<div class="ticketBody">
+
+<p>
+
+Para:
+
+<strong>Ceci 💙</strong>
+
+</p>
+
+<p>
+
+Lugar:
+
+<strong>La Feria</strong>
+
+</p>
+
+<p>
+
+Si algún día te apetece,
+me encantaría invitarte
+a pasar un buen rato.
+
+</p>
+
+</div>
+
+<div class="ticketButtons">
+
+<button
+id="acceptButton">
+
+Me gustaría 💙
+
+</button>
+
+<button
+id="laterButton">
+
+Tal vez después 😊
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+<!--==========================
+          FINAL
+===========================-->
+
+<section
+id="finalScreen"
+class="screen hidden">
+
+    <div class="glass">
+
+        <h1>
+
+            Feliz Cumpleaños 💙
+
+        </h1>
+
+        <p id="finalMessage">
+
+            Espero que este pequeño detalle
+            haya logrado sacarte una sonrisa.
+
+            <br><br>
+
+            Gracias por darte el tiempo
+            de llegar hasta aquí.
+
+            <br><br>
+
+            Te deseo un año lleno de
+            alegrías, metas cumplidas
+            y momentos muy bonitos.
+
+            <br><br>
+
+            Nunca dejes de sonreír.
+
+            💙
+
+        </p>
+
+        <button
+        id="secretButton">
+
+            Una última sorpresa 🌙
+
+        </button>
+
+    </div>
+
+</section>
+
+<!--==========================
+       MENSAJE SECRETO
+===========================-->
+
+<section
+id="secretScreen"
+class="screen hidden">
+
+    <div class="glass secretCard">
+
+        <h2>
+
+            🌌
+
+        </h2>
+
+        <p id="scretMessage">
+
+            Las estrellas parecen estar muy lejos...
+
+            <br><br>
+
+            Pero los pequeños detalles
+            sí pueden llegar al corazón.
+
+            <br><br>
+
+            Gracias por dedicar unos minutos
+            a este regalo.
+
+            <br><br>
+
+            Feliz cumpleaños, Ceci.
+
+            💙
+
+        </p>
+
+        <button
+        id="restartButton">
+
+            Volver a verlo ✨
+
+        </button>
+
+    </div>
+
+</section>
+
+<!--==========================
+         FOOTER
+===========================-->
+
+<footer id="credits">
+
+    Hecho con 💙 por César
+
+</footer>
+
+<!--==========================
+         JAVASCRIPT
+===========================-->
+
+<script src="js/ui.js"></script>
+
+<script src="js/music.js"></script>
+
+<script src="js/stars.js"></script>
+
+<script src="js/effects.js"></script>
+
+<script src="js/letter.js"></script>
+
+<script src="js/app.js"></script>
+<script src="js/parallax.js"></script>
+<script src="js/rose.js"></script>
+
+</body>
+
+</html>

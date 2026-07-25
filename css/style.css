@@ -1,0 +1,1238 @@
+/*==========================
+        VARIABLES
+==========================*/
+
+:root{
+
+    --bg:#04101f;
+    --bg2:#071d36;
+    --blue:#4ea8ff;
+    --blue2:#89c8ff;
+    --glass:rgba(255,255,255,.08);
+    --glassBorder:rgba(255,255,255,.15);
+    --white:#ffffff;
+    --text:#eaf6ff;
+    --shadow:0 20px 45px rgba(0,0,0,.35);
+
+    --radius:24px;
+
+}
+
+/*==========================
+         RESET
+==========================*/
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:"Poppins",sans-serif;
+
+    background:
+    radial-gradient(circle at top,
+    var(--bg2),
+    var(--bg));
+
+    color:var(--text);
+
+    overflow:hidden;
+
+    width:100vw;
+    height:100vh;
+
+}
+
+/*==========================
+      PANTALLAS
+==========================*/
+
+.screen{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+  overflow-y: auto;
+
+    transition:.7s;
+
+}
+
+.hidden{
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transform:scale(.95);
+
+}
+
+.active{
+
+    opacity:1;
+
+}
+
+/*==========================
+      TARJETA CRISTAL
+==========================*/
+
+.glass{
+
+    width:min(90%,720px);
+
+    background:var(--glass);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid
+    var(--glassBorder);
+
+    border-radius:var(--radius);
+
+    padding:45px;
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+}
+
+/*==========================
+        TITULOS
+==========================*/
+
+.title{
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:4rem;
+
+    color:white;
+
+    margin-bottom:10px;
+
+}
+
+.name{
+
+    font-size:2rem;
+
+    color:var(--blue2);
+
+    margin-bottom:30px;
+
+}
+
+h2{
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+p{
+
+    line-height:1.9;
+
+    font-size:1.05rem;
+
+}
+/*==========================
+         BOTONES
+==========================*/
+
+button{
+
+    margin-top:25px;
+
+    padding:14px 34px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        135deg,
+        var(--blue),
+        #2d7cff
+    );
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:
+    0 10px 25px
+    rgba(78,168,255,.35);
+
+}
+
+button:hover{
+
+    transform:
+    translateY(-3px)
+    scale(1.03);
+
+    box-shadow:
+    0 18px 35px
+    rgba(78,168,255,.45);
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+/*==========================
+       BOTÓN MÚSICA
+==========================*/
+
+#musicButton{
+
+    position:fixed;
+
+    top:20px;
+
+    right:20px;
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:1.3rem;
+
+    z-index:1000;
+
+}
+
+/*==========================
+      CUENTA REGRESIVA
+==========================*/
+
+#counter{
+
+    font-size:7rem;
+
+    font-weight:700;
+
+    color:var(--blue2);
+
+    margin-top:20px;
+
+    text-shadow:
+    0 0 20px
+    rgba(137,200,255,.6);
+
+}
+
+/*==========================
+          SOBRE
+==========================*/
+
+.envelope{
+
+    position:relative;
+
+    width:320px;
+
+    height:220px;
+
+    margin:40px auto;
+
+    cursor:pointer;
+
+}
+
+.body{
+    position:absolute;
+    bottom:0;
+    left:0;
+
+    width:100%;
+    height:165px;
+
+    background:
+    linear-gradient(
+        160deg,
+        #9ad4ff 0%,
+        #75b7ff 45%,
+        #4f93e8 100%
+    );
+
+    border-radius:0 0 18px 18px;
+
+    box-shadow:
+        inset 0 8px 18px rgba(255,255,255,.25),
+        0 15px 35px rgba(0,0,0,.30);
+
+    overflow:hidden;
+}
+
+.lid{
+    position:absolute;
+
+    top:32px;
+    left:0;
+
+    width:100%;
+    height:105px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #c8e8ff,
+            #97cbff,
+            #6faef4
+        );
+
+    clip-path:polygon(
+        0 0,
+        100% 0,
+        50% 85%
+    );
+
+    transform-origin:top center;
+
+    transition:
+        transform .8s ease;
+
+    z-index:3;
+}
+
+.envelope.open .lid{
+
+    transform:rotateX(165deg);
+
+}
+
+.paperShadow{
+
+    position:absolute;
+
+    bottom:40px;
+
+    left:25px;
+
+    width:290px;
+
+    height:120px;
+
+    border-radius:8px;
+
+    background:linear-gradient(to bottom, #ffffff, #f4f4f4);
+  box-shadow: 0 6px rgba(0, 0, 0, .18);
+
+}
+
+.seal{
+  z-index: 10;
+
+    position:absolute;
+
+    left:50%;
+
+    top:60px;
+
+    transform:translateX(-50%);
+
+    width:62px;
+
+    height:62px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        #ffffff,
+        #edf8ff
+    );
+
+border:2px solid rgba(255,255,255,.9);
+
+box-shadow:
+    0 0 18px rgba(255,255,255,.45),
+    0 8px 20px rgba(0,0,0,.22);
+
+}
+/*==========================
+          CARTA
+==========================*/
+
+.paper{
+
+    max-width:760px;
+  width: min(92%, 760px);
+  max-height: 82vh;
+  overflow-y: auto;
+
+
+
+}
+
+.letterHeader{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+    padding-bottom:15px;
+
+    border-bottom:1px solid
+    rgba(255,255,255,.15);
+
+}
+
+#letterDate{
+
+    color:var(--blue2);
+
+    font-size:.95rem;
+
+}
+
+#letterText{
+
+    text-align:left;
+
+    white-space:pre-wrap;
+
+    line-height:1.9;
+
+    overflow-y:auto;
+
+    max-height:55vh;
+
+    padding-right:8px;
+
+}
+
+#continueButton{
+
+    margin-top:35px;
+
+}
+
+/*==========================
+         DESEOS
+==========================*/
+
+#wishContainer{
+
+    min-height:180px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:1.4rem;
+
+    font-weight:500;
+
+    color:var(--blue2);
+
+    padding:20px;
+
+    transition:.5s;
+
+}
+
+/*==========================
+         ROSA AZUL
+==========================*/
+
+#roseContainer{
+
+    width:280px;
+
+    height:280px;
+
+    margin:20px auto;
+
+    position:relative;
+
+}
+
+#roseMessage{
+
+    margin-top:20px;
+
+    font-size:1.05rem;
+
+    line-height:1.9;
+
+}
+
+/*==========================
+        INVITACIÓN
+==========================*/
+
+.ticket{
+
+    width:min(90%,650px);
+
+    background:white;
+
+    color:#16314f;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:0 25px 45px
+    rgba(0,0,0,.30);
+
+}
+
+.ticketTop{
+
+    background:linear-gradient(
+        135deg,
+        #4ea8ff,
+        #1f6ee5
+    );
+
+    color:white;
+
+    padding:25px;
+
+    text-align:center;
+
+}
+
+.ticketBody{
+
+    padding:35px;
+
+    text-align:center;
+
+}
+
+.ticketBody p{
+
+    margin:15px 0;
+
+}
+
+.ticketButtons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    padding:25px 30px 35px;
+
+    flex-wrap:wrap;
+
+}
+/*==========================
+          FINAL
+==========================*/
+
+#finalMessage{
+
+    margin-top:20px;
+
+    line-height:2;
+
+    font-size:1.08rem;
+
+}
+
+.secretCard{
+
+    max-width:650px;
+
+}
+
+.secretCard h2{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+
+}
+
+/*==========================
+         CRÉDITOS
+==========================*/
+
+#credits{
+
+    position:fixed;
+
+    bottom:15px;
+
+    width:100%;
+
+    text-align:center;
+
+    font-size:.85rem;
+
+    color:rgba(255,255,255,.55);
+
+    letter-spacing:1px;
+
+    z-index:5;
+
+    pointer-events:none;
+
+}
+
+/*==========================
+      SCROLL CARTA
+==========================*/
+
+#letterText::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+#letterText::-webkit-scrollbar-thumb{
+
+    background:rgba(255,255,255,.25);
+
+    border-radius:10px;
+
+}
+
+#letterText::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+/*==========================
+      RESPONSIVE
+==========================*/
+
+@media(max-width:768px){
+
+    .glass{
+
+        width:95%;
+
+        padding:28px 22px;
+
+    }
+
+    .title{
+
+        font-size:2.8rem;
+
+    }
+
+    .name{
+
+        font-size:1.5rem;
+
+    }
+
+    p{
+
+        font-size:1rem;
+
+    }
+
+    #counter{
+
+        font-size:5rem;
+
+    }
+
+    .envelope{
+
+        width:260px;
+
+        height:180px;
+
+    }
+
+    .body{
+
+        height:130px;
+
+    }
+
+    .lid{
+
+        height:95px;
+
+    }
+
+    .paperShadow{
+
+        width:215px;
+
+        height:105px;
+
+        left:22px;
+
+    }
+
+    .seal{
+
+        width:50px;
+
+        height:50px;
+
+        top:120px;
+
+        font-size:1.2rem;
+
+    }
+
+    .ticketButtons{
+
+        flex-direction:column;
+
+    }
+
+    button{
+
+        width:100%;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .title{
+
+        font-size:2.2rem;
+
+    }
+
+    .name{
+
+        font-size:1.3rem;
+
+    }
+
+    #counter{
+
+        font-size:4rem;
+
+    }
+
+    #letterText{
+
+        font-size:.95rem;
+
+        line-height:1.8;
+
+    }
+
+    #roseContainer{
+
+        width:220px;
+
+        height:220px;
+
+    }
+
+}
+/*==================================================
+            STYLE V2.1
+==================================================*/
+
+/*==========================
+        FONDO
+==========================*/
+
+body{
+
+    background:
+        radial-gradient(circle at top,
+            #183a72 0%,
+            #0c1f47 35%,
+            #050b1c 70%,
+            #02040a 100%);
+
+    overflow-x:hidden;
+
+}
+
+/*==========================
+          LUNA
+==========================*/
+
+#moon{
+
+    transition:
+        transform .4s ease,
+        filter .4s ease;
+
+    filter:
+        drop-shadow(0 0 18px rgba(255,255,255,.6));
+
+}
+
+#moon:hover{
+
+    transform:scale(1.08);
+
+    filter:
+        drop-shadow(0 0 35px rgba(255,255,255,.95));
+
+}
+
+/*==========================
+      TARJETAS
+==========================*/
+
+.card,
+.letter,
+.ticket{
+
+    backdrop-filter:blur(8px);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.35);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.card:hover,
+.letter:hover,
+.ticket:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 28px 70px rgba(0,0,0,.45);
+
+}
+/*==================================================
+        STYLE V2.1 - FINAL
+==================================================*/
+
+/*==========================
+        BOTONES
+==========================*/
+
+button{
+
+    border:none;
+    border-radius:16px;
+
+    background:linear-gradient(
+        135deg,
+        #3fa9ff,
+        #2563eb
+    );
+
+    color:white;
+
+    font-weight:bold;
+
+    letter-spacing:.5px;
+
+    cursor:pointer;
+
+    transition:
+        all .25s ease;
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 12px 28px rgba(37,99,235,.35);
+
+}
+
+button:active{
+
+    transform:scale(.96);
+
+}
+
+/*==========================
+        ESTRELLAS
+==========================*/
+
+.star{
+
+    animation:
+        twinkle 3s ease-in-out infinite;
+
+}
+
+@keyframes twinkle{
+
+    0%{
+
+        opacity:.3;
+        transform:scale(.8);
+
+    }
+
+    50%{
+
+        opacity:1;
+        transform:scale(1.3);
+
+    }
+
+    100%{
+
+        opacity:.3;
+        transform:scale(.8);
+
+    }
+
+}
+
+/*==========================
+        ROSA
+==========================*/
+
+#roseContainer{
+
+    animation:
+        floatRose 4s ease-in-out infinite;
+
+}
+
+@keyframes floatRose{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/*==========================
+        RESPONSIVE
+==========================*/
+
+@media(max-width:768px){
+
+    .letter,
+    .card,
+    .ticket{
+
+        width:92%;
+
+        padding:22px;
+
+
+    }
+
+    button{
+
+        width:100%;
+
+        max-width:320px;
+
+    }
+
+.paper{
+        max-height: 88vh;
+      }
+      #latterText{
+        max-height: 60vh;
+      }}
+/*==========================
+        PARALLAX
+==========================*/
+
+#moon{
+
+    will-change:transform;
+
+}
+
+.star{
+
+    will-change:transform;
+
+}
+
+.sky{
+
+    overflow:hidden;
+
+}
+#blueRose{
+
+    width:240px;
+
+    max-width:80vw;
+
+    filter:
+        drop-shadow(0 0 18px #4da6ff);
+
+}
+
+#flower{
+
+    transform-origin:center;
+
+    animation:
+        bloom 2.2s ease forwards;
+
+}
+
+#stem{
+
+    stroke-dasharray:260;
+
+    stroke-dashoffset:260;
+
+    animation:
+        growStem 2s ease forwards;
+
+}
+
+@keyframes growStem{
+
+    to{
+
+        stroke-dashoffset:0;
+
+    }
+
+}
+
+@keyframes bloom{
+
+    0%{
+
+        transform:
+            scale(.2)
+            rotate(-25deg);
+
+        opacity:0;
+
+    }
+
+    70%{
+
+        transform:
+            scale(1.08);
+
+    }
+
+    100%{
+
+        transform:
+            scale(1);
+
+        opacity:1;
+
+    }
+
+}
+#blueRose{
+
+width:320px;
+
+max-width:90vw;
+
+filter:
+
+drop-shadow(0 0 15px #7ec8ff)
+
+drop-shadow(0 0 35px #4d8dff);
+
+}
+
+#stem{
+
+stroke-dasharray:900;
+
+stroke-dashoffset:900;
+
+animation:
+
+growStem 3s ease forwards;
+
+}
+
+@keyframes growStem{
+
+to{
+
+stroke-dashoffset:0;
+
+}
+
+}
+
+#leafLeft,
+#leafRight{
+
+opacity:0;
+
+animation:
+
+leafGrow 1.5s ease forwards;
+
+animation-delay:2.2s;
+
+transform-origin:center;
+
+}
+
+@keyframes leafGrow{
+
+0%{
+
+opacity:0;
+
+transform:scale(.2);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+/*==========================
+      PÉTALOS PREMIUM
+==========================*/
+
+
+
+#roseLayers path{
+
+    transform-origin:center;
+
+    opacity:0;
+
+    animation:
+
+        bloomRose
+
+        1.2s
+
+        ease
+
+        forwards;
+
+}
+
+#roseLayers path:nth-child(odd){
+
+    animation-delay:.4s;
+
+}
+
+#roseLayers path:nth-child(even){
+
+    animation-delay:.8s;
+
+}
+
+@keyframes bloomRose{
+
+    0%{
+
+        opacity:0;
+
+        transform:scale(.1);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+.leftFold{
+    background:linear-gradient(
+        135deg,
+        #bfe4ff,
+        #8cc7ff
+    );
+}
+
+.rightFold{
+    background:linear-gradient(
+        45deg,
+        #7ab6f8,
+        #5f9ee8
+    );
+}
+
+
