@@ -1,460 +1,335 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Feliz Cumpleaños, Ceci 💙</title>
+    <title>Feliz Dia, Ceci 💙</title>
 
     <meta name="theme-color" content="#07162e">
-
-    <meta name="description"
-          content="Un regalo hecho con mucho cariño.">
+    <meta name="description" content="Un regalo hecho con mucho cariño.">
 
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-
-    <link rel="stylesheet"
-          href="css/style.css">
-
-    <link rel="stylesheet"
-          href="css/stars.css">
-
-    <link rel="stylesheet"
-          href="css/animations.css">
-
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stars.css">
+    <link rel="stylesheet" href="css/animations.css">
 </head>
 
 <body>
 
 <!--==========================
-        FONDO
+ FONDO
 ===========================-->
 
 <div id="sky"></div>
-
 <div id="stars"></div>
-
 <div id="particles"></div>
-
 <div id="moon"></div>
 
 <!--==========================
-        MÚSICA
+ MÚSICA
 ===========================-->
 
-<button id="musicButton"
-        title="Música">
-
+<button id="musicButton" title="Música">
     🎵
-
 </button>
 
-<audio
-id="music"
-loop>
-
-<source
-src="music/musica.mp3"
-type="audio/mpeg">
-
+<audio id="music" loop>
+    <source src="music/506.mp3" type="audio/mpeg">
 </audio>
 
 <!--==========================
-      INTRODUCCIÓN
+ INTRODUCCIÓN
 ===========================-->
 
-<section
-id="intro"
-class="screen active">
+<section id="intro" class="screen active">
+    <div class="glass">
 
-<div class="glass">
+        <h1 class="title">
+            Feliz Cumpleaños
+        </h1>
 
-<h1 class="title">
+        <h2 class="name">
+            Ceci 💙
+        </h2>
 
-Feliz Cumpleaños
+        <p class="introText">
+            Hay regalos que se compran.
+            <br><br>
+            Y otros...
+            que se construyen con tiempo,
+            paciencia y mucho cariño.
+        </p>
 
-</h1>
+        <button id="startButton">
+            Comenzar ✨
+        </button>
 
-<h2 class="name">
-
-Ceci 💙
-
-</h2>
-
-<p class="introText">
-
-Hay regalos que se compran.
-
-<br><br>
-
-Y otros...
-
-que se construyen con tiempo,
-paciencia y mucho cariño.
-
-</p>
-
-<button
-id="startButton">
-
-Comenzar ✨
-
-</button>
-
-</div>
-
+    </div>
 </section>
 
 <!--==========================
-     CUENTA REGRESIVA
+ CUENTA REGRESIVA
 ===========================-->
 
-<section
-id="countdown"
-class="screen hidden">
+<section id="countdown" class="screen hidden">
+    <div class="glass">
 
-<div class="glass">
+        <h2>
+            Preparando tu sorpresa...
+        </h2>
 
-<h2>
+        <div id="counter">
+            3
+        </div>
 
-Preparando tu sorpresa...
-
-</h2>
-
-<div id="counter">
-
-3
-
-</div>
-
-</div>
-
+    </div>
 </section>
 
 <!--==========================
-          SOBRE
+ SOBRE
 ===========================-->
 
-<section
-id="envelopeScreen"
-class="screen hidden">
+<section id="envelopeScreen" class="screen hidden">
+    <div class="glass">
 
-<div class="glass">
+        <h2>
+            Toca el sobre
+        </h2>
 
-<h2>
+        <div class="envelope" id="envelope">
 
-Toca el sobre
+            <div class="lid"></div>
+            <div class="paperShadow"></div>
+            <div class="body"></div>
+            <div class="leftFold"></div>
+            <div class="rightFold"></div>
 
-</h2>
+            <div class="seal">
+                💙
+            </div>
 
-<div
-class="envelope"
-id="envelope">
+        </div>
 
-<div class="lid"></div>
-
-<div class="paperShadow"></div>
-
-<div class="body"></div>
-  <div class="leftFold"></div>
-  <div class="rightFold"></div>
-
-<div class="seal">
-
-💙
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-<!--==========================
-          CARTA
-===========================-->
-
-<section
-id="letterScreen"
-class="screen hidden">
-
-<div class="glass paper">
-
-<div class="letterHeader">
-
-<h2>Para ti 💙</h2>
-
-<span id="letterDate"></span>
-
-</div>
-
-<div id="letterText">
-
-</div>
-
-<button
-id="continueButton"
-class="hidden">
-
-Continuar ✨
-
-</button>
-
-</div>
-
+    </div>
 </section>
 
 <!--==========================
-         DESEOS
+ CARTA
 ===========================-->
 
-<section
-id="wishesScreen"
-class="screen hidden">
+<section id="letterScreen" class="screen hidden">
+    <div class="glass paper">
 
-<div class="glass">
+        <div class="letterHeader">
+            <h2>Para ti 💙</h2>
+            <span id="letterDate"></span>
+        </div>
 
-<h2>
+        <div id="letterText"></div>
 
-Un pequeño deseo para ti ✨
+        <button id="continueButton" class="hidden">
+            Continuar ✨
+        </button>
 
-</h2>
+    </div>
+</section>
+<!--==========================
+ DESEOS
+===========================-->
 
-<div id="wishContainer">
+<section id="wishesScreen" class="screen hidden">
+    <div class="glass">
 
-</div>
+        <h2>
+            Un pequeño deseo para ti ✨
+        </h2>
 
-<div class="wishControls">
+        <div id="wishContainer"></div>
 
-<button id="nextWish">
+        <div class="wishControls">
+            <button id="nextWish">
+                Siguiente deseo →
+            </button>
+        </div>
 
-Siguiente deseo →
-
-</button>
-
-</div>
-
-</div>
-
+    </div>
 </section>
 
 <!--==========================
-        ROSA AZUL
+ ROSA AZUL
 ===========================-->
 
-<section
-id="roseScreen"
-class="screen hidden">
+<section id="roseScreen" class="screen hidden">
+    <div class="glass">
 
-<div class="glass">
+        <h2>
+            Una pequeña sorpresa...
+        </h2>
 
-<h2>
+        <div id="roseContainer">
 
-Una pequeña sorpresa...
+            <div class="roseScene">
 
-</h2>
+                <svg class="blueRose" viewBox="0 0 300 420">
 
-<div id="roseContainer">
+                    <defs>
 
+                        <radialGradient id="petalBlue" cx="35%" cy="30%">
+                            <stop offset="0%" stop-color="#d8f6ff"/>
+                            <stop offset="35%" stop-color="#77c7ff"/>
+                            <stop offset="70%" stop-color="#287bff"/>
+                            <stop offset="100%" stop-color="#163fb5"/>
+                        </radialGradient>
 
-<div class="roseScene">
+                        <linearGradient id="stemGreen" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#75ff8b"/>
+                            <stop offset="100%" stop-color="#1c7c35"/>
+                        </linearGradient>
 
-<svg class="blueRose" viewBox="0 0 300 420">
+                    </defs>
 
-    <defs>
+                    <!-- Halo -->
+                    <circle
+                        cx="150"
+                        cy="120"
+                        r="90"
+                        fill="#4fc3ff33"/>
 
-        <radialGradient id="petalBlue" cx="35%" cy="30%">
-            <stop offset="0%" stop-color="#d8f6ff"/>
-            <stop offset="35%" stop-color="#77c7ff"/>
-            <stop offset="70%" stop-color="#287bff"/>
-            <stop offset="100%" stop-color="#163fb5"/>
-        </radialGradient>
+                    <!-- Tallo -->
+                    <rect
+                        x="146"
+                        y="150"
+                        width="8"
+                        height="180"
+                        rx="4"
+                        fill="url(#stemGreen)"/>
 
-        <linearGradient id="stemGreen" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#75ff8b"/>
-            <stop offset="100%" stop-color="#1c7c35"/>
-        </linearGradient>
+                    <!-- Hojas -->
+                    <ellipse
+                        cx="115"
+                        cy="235"
+                        rx="24"
+                        ry="46"
+                        fill="#62e56d"
+                        transform="rotate(-35 115 235)"/>
 
-    </defs>
+                    <ellipse
+                        cx="185"
+                        cy="210"
+                        rx="24"
+                        ry="46"
+                        fill="#62e56d"
+                        transform="rotate(35 185 210)"/>
 
-    <!-- Halo -->
-    <circle
-        cx="150"
-        cy="120"
-        r="90"
-        fill="#4fc3ff33"/>
+                    <!-- Pétalos exteriores -->
+                    <ellipse cx="150" cy="92" rx="22" ry="42" fill="url(#petalBlue)"/>
+                    <ellipse cx="122" cy="112" rx="20" ry="40" fill="url(#petalBlue)"
+                             transform="rotate(-35 122 112)"/>
+                    <ellipse cx="178" cy="112" rx="20" ry="40" fill="url(#petalBlue)"
+                             transform="rotate(35 178 112)"/>
+                    <ellipse cx="132" cy="145" rx="18" ry="34" fill="url(#petalBlue)"
+                             transform="rotate(-70 132 145)"/>
+                    <ellipse cx="168" cy="145" rx="18" ry="34" fill="url(#petalBlue)"
+                             transform="rotate(70 168 145)"/>
 
-    <!-- Tallo -->
-    <rect
-        x="146"
-        y="150"
-        width="8"
-        height="180"
-        rx="4"
-        fill="url(#stemGreen)"/>
+                    <!-- Pétalos interiores -->
+                    <ellipse cx="150" cy="116" rx="18" ry="30" fill="#bfefff"/>
+                    <ellipse cx="140" cy="124" rx="12" ry="24" fill="#8ed5ff"
+                             transform="rotate(-25 140 124)"/>
+                    <ellipse cx="160" cy="124" rx="12" ry="24" fill="#8ed5ff"
+                             transform="rotate(25 160 124)"/>
 
-    <!-- Hojas -->
-    <ellipse
-        cx="115"
-        cy="235"
-        rx="24"
-        ry="46"
-        fill="#62e56d"
-        transform="rotate(-35 115 235)"/>
+                    <!-- Centro -->
+                    <ellipse cx="150" cy="128" rx="9" ry="16" fill="#dff8ff"/>
 
-    <ellipse
-        cx="185"
-        cy="210"
-        rx="24"
-        ry="46"
-        fill="#62e56d"
-        transform="rotate(35 185 210)"/>
+                </svg>
 
-    <!-- Flor (por ahora sencilla) -->
-    <!-- Pétalos exteriores -->
-<ellipse cx="150" cy="92" rx="22" ry="42" fill="url(#petalBlue)"/>
-<ellipse cx="122" cy="112" rx="20" ry="40" fill="url(#petalBlue)" transform="rotate(-35 122 112)"/>
-<ellipse cx="178" cy="112" rx="20" ry="40" fill="url(#petalBlue)" transform="rotate(35 178 112)"/>
-<ellipse cx="132" cy="145" rx="18" ry="34" fill="url(#petalBlue)" transform="rotate(-70 132 145)"/>
-<ellipse cx="168" cy="145" rx="18" ry="34" fill="url(#petalBlue)" transform="rotate(70 168 145)"/>
+            </div>
 
-<!-- Pétalos interiores -->
-<ellipse cx="150" cy="116" rx="18" ry="30" fill="#bfefff"/>
-<ellipse cx="140" cy="124" rx="12" ry="24" fill="#8ed5ff" transform="rotate(-25 140 124)"/>
-<ellipse cx="160" cy="124" rx="12" ry="24" fill="#8ed5ff" transform="rotate(25 160 124)"/>
+        </div>
 
-<!-- Centro -->
-<ellipse cx="150" cy="128" rx="9" ry="16" fill="#dff8ff"/>
+        <p id="roseMessage">
+            A veces los mejores regalos
+            no caben en una caja.
+            Se hacen con tiempo,
+            dedicación y mucho cariño.
+        </p>
 
-</svg>
+        <button id="roseButton">
+            Continuar 💙
+        </button>
 
-</div>
-</div>
-
-<p id="roseMessage">
-
-A veces los mejores regalos
-no caben en una caja.
-
-Se hacen con tiempo,
-dedicación y mucho cariño.
-
-</p>
-
-<button
-id="roseButton">
-
-Continuar 💙
-
-</button>
-
-</div>
-
+    </div>
 </section>
 
 <!--==========================
-       INVITACIÓN
+ INVITACIÓN
 ===========================-->
 
-<section
-id="ticketScreen"
-class="screen hidden">
+<section id="ticketScreen" class="screen hidden">
+    <div class="ticket">
 
-<div class="ticket">
+        <div class="ticketTop">
+            <h2>
+                🎡 Invitacion...
+            </h2>
+        </div>
 
-<div class="ticketTop">
+        <div class="ticketBody">
 
-<h2>
+            <p>
+                Para:
+                <strong>Ceci 💙</strong>
+            </p>
 
-🎡 Invitacion...
+            <p>
+                Lugar:
+                <strong>La Feria</strong>
+            </p>
 
-</h2>
+            <p>
+                Tal ves suene atrevido y perdon si lo es
+              pero tenia que intentarlo y invitarte
+              asi que preguntare
+              ¿Quieres ir a la feria con yo ?...
+            </p>
 
-</div>
+        </div>
 
-<div class="ticketBody">
+        <div class="ticketButtons">
 
-<p>
+            <button id="acceptButton">
+                Me gustaría 💙
+            </button>
 
-Para:
+            <button id="laterButton">
+                Tal ves... 😊
+            </button>
 
-<strong>Ceci 💙</strong>
+        </div>
 
-</p>
-
-<p>
-
-Lugar:
-
-<strong>La Feria</strong>
-
-</p>
-
-<p>
-
-Se que al baile no podemos ir
-  pero te parece si vamos
-  a la feria ?.
-
-</p>
-
-</div>
-
-<div class="ticketButtons">
-
-<button
-id="acceptButton">
-
-Me gustaría 💙
-
-</button>
-
-<button
-id="laterButton">
-
-Tal ves... 😊
-
-</button>
-
-</div>
-
-</div>
-
+    </div>
 </section>
 <!--==========================
-          FINAL
+ FINAL
 ===========================-->
 
-<section
-id="finalScreen"
-class="screen hidden">
+<section id="finalScreen" class="screen hidden">
 
     <div class="glass">
 
         <h1>
-
-            Feliz Cumpleaños 💙
-
+            Felices 20 💙
         </h1>
 
         <p id="finalMessage">
-
             Espero que este pequeño detalle
             haya logrado sacarte una sonrisa.
 
@@ -472,16 +347,11 @@ class="screen hidden">
             <br><br>
 
             Nunca dejes de sonreír.
-
             💙
-
         </p>
 
-        <button
-        id="secretButton">
-
-            Una última sorpresa 🌙
-
+        <button id="secretButton">
+             Antes de que te vayas... ✨
         </button>
 
     </div>
@@ -489,48 +359,50 @@ class="screen hidden">
 </section>
 
 <!--==========================
-       MENSAJE SECRETO
+ MENSAJE SECRETO
 ===========================-->
 
-<section
-id="secretScreen"
-class="screen hidden">
+<section id="secretScreen" class="screen hidden">
 
     <div class="glass secretCard">
 
         <h2>
-
-            🌌
-
+            💙 Antes de despedirme...
         </h2>
 
-        <p id="scretMessage">
+        <p id="secretMessage">
 
-            Las estrellas parecen estar muy lejos...
-
-            <br><br>
-
-            Pero los pequeños detalles
-            sí pueden llegar al corazón.
+            Solo queria decirte que aunq la estrellas parecen estar muy lejos...
 
             <br><br>
 
-            Gracias por dedicar unos minutos
-            a este regalo.
+            Existen personas que, sin siquiera imaginarlo,
+            pueden iluminar la vida de alguien más.
 
             <br><br>
 
-            Feliz cumpleaños, Ceci.
+            Estoy completamente seguro de que
+            tú eres una de esas personas.
 
-            💙
+            <br><br>
+
+            Gracias por llegar hasta el final
+            de este pequeño regalo.
+
+            <br><br>
+
+            Espero haberte sacado más de una sonrisa
+            y haber hecho que este día fuera
+            un poquito más especial para ti.
+
+            <br><br>
+
+            Feliz cumpleaños, Ceci. 💙
 
         </p>
 
-        <button
-        id="restartButton">
-
+        <button id="restartButton">
             Volver a verlo ✨
-
         </button>
 
     </div>
@@ -538,33 +410,25 @@ class="screen hidden">
 </section>
 
 <!--==========================
-         FOOTER
+ FOOTER
 ===========================-->
 
 <footer id="credits">
-
     Hecho con 💙 por César
-
 </footer>
 
 <!--==========================
-         JAVASCRIPT
+ JAVASCRIPT
 ===========================-->
 
 <script src="js/ui.js"></script>
-
 <script src="js/music.js"></script>
-
 <script src="js/stars.js"></script>
-
 <script src="js/effects.js"></script>
-
 <script src="js/letter.js"></script>
-
 <script src="js/app.js"></script>
 <script src="js/parallax.js"></script>
 <script src="js/rose.js"></script>
 
 </body>
-
 </html>

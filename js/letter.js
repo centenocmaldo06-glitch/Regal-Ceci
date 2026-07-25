@@ -23,7 +23,7 @@ Quería hacerte un regalo diferente.
 No algo que simplemente pudiera comprarse,
 sino algo que pudiera quedarse como un bonito recuerdo.
 
-Tal vez no sea el regalo más grande del mundo,
+Tal vez no sea el regalo más grande y perfecto del mundo,
 pero cada línea de esta página fue escrita
 pensando en sacarte una sonrisa.`;
 
@@ -38,15 +38,7 @@ let writing = false;
         FECHA
 ==========================*/
 
-const today = new Date();
-
-letterDate.textContent =
-today.toLocaleDateString("es-MX",{
-    day:"numeric",
-    month:"long",
-    year:"numeric"
-});
-
+letterDate.textContent="28 de Julio de 2026";
 /*==========================
       INICIAR CARTA
 ==========================*/

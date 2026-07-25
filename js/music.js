@@ -13,7 +13,7 @@ let musicPlaying = false;
 
 function startMusic(){
 
-    music.volume = 0.35;
+    music.volume = 0.25;
 
     music.play()
         .then(()=>{
